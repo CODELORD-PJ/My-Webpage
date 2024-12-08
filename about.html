@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Amity University Gwalior</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body,
+        html {
+            font-family: "Roboto", Arial, sans-serif;
+            background-color: rgb(18, 18, 18);
+            /* Deep Dark Gray */
+            color: rgb(230, 230, 230);
+            /* Light Gray */
+            scroll-behavior: smooth;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background Animation - Subtle Animated Gradient */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.2));
+            z-index: -1;
+            animation: animeGradient 15s infinite alternate ease-in-out;
+        }
+
+        @keyframes animeGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Header with Anime-Style Glow */
+        header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: rgba(30, 30, 30, 0.9);
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        header #logo {
+            height: 50px;
+            cursor: pointer;
+            transition: transform 0.3s ease, filter 0.3s ease;
+            filter: drop-shadow(0 0 5px rgb(255, 100, 100));
+        }
+
+        header #logo:hover {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 10px rgb(255, 100, 100));
+        }
+
+        header nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        header nav a {
+            color: rgb(200, 200, 200);
+            text-decoration: none;
+            font-size: 1rem;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        header nav a:hover {
+            background-color: rgba(40, 40, 40, 0.9);
+            color: rgb(255, 100, 100);
+            box-shadow: 0 0 10px rgb(255, 100, 100);
+        }
+
+        /* Hero Section with Animated Background */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, rgba(255, 100, 100, 0.2), rgba(50, 50, 50, 0.9));
+            color: rgb(230, 230, 230);
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0px 0px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-shadow: 0px 4px 8px rgba(255, 100, 100, 0.6);
+            animation: animePop 3s infinite ease-in-out;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+            text-shadow: 0px 2px 5px rgba(255, 100, 100, 0.4);
+        }
+
+        @keyframes animePop {
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Video Section */
+        .video-bg {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+            overflow: hidden;
+        }
+
+        .video-bg iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Content Section */
+        .content {
+            padding: 40px 20px;
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.6);
+            margin: 20px auto;
+            max-width: 800px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Forms */
+        form {
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 20px;
+            background-color: rgba(30, 30, 30, 0.9);
+            border-radius: 10px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        form label {
+            font-weight: bold;
+            font-size: 1rem;
+            color: rgb(230, 230, 230);
+        }
+
+        form input,
+        form select,
+        form textarea,
+        form button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgb(100, 100, 100);
+            border-radius: 5px;
+            font-size: 1rem;
+            background-color: rgb(50, 50, 50);
+            color: rgb(230, 230, 230);
+        }
+
+        form textarea {
+            resize: none;
+        }
+
+        form button {
+            background-color: rgb(255, 100, 100);
+            color: rgb(230, 230, 230);
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 0 10px rgb(255, 100, 100);
+        }
+
+        form button:hover {
+            background-color: rgb(200, 80, 80);
+            box-shadow: 0 0 20px rgb(255, 100, 100);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(30, 30, 30, 0.9);
+            color: rgb(200, 200, 200);
+            font-size: 0.9rem;
+            border-top: 2px solid rgba(255, 100, 100, 0.6);
+        }
+
+        /* Comparison Table */
+        .comparison-table {
+            width: 100%;
+            margin: 20px 0;
+            border-collapse: collapse;
+            background-color: rgba(30, 30, 40, 0.8);
+            color: rgb(230, 230, 230);
+            border-radius: 10px;
+        }
+
+        .comparison-table th,
+        .comparison-table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid rgb(100, 100, 100);
+        }
+
+        .comparison-table th {
+            background-color: rgb(255, 100, 100);
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .comparison-table tr:nth-child(even) {
+            background-color: rgba(50, 50, 50, 0.7);
+        }
+
+        .comparison-table tr:hover {
+            background-color: rgba(255, 100, 100, 0.3);
+            cursor: pointer;
+        }
+    </style>
+</head>
+</head>
+
+<body>
+    <header>
+        <img src="media/logo.png" alt="Amity Logo" id="logo">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+
+    </header>
+    <main>
+        <div class="hero">
+            <h1>About Amity University Gwalior</h1>
+            <p>Discover the mission, vision, and achievements of Amity University Gwalior.</p>
+        </div>
+
+        <div class="content">
+            <h2>Our Vision and Mission</h2>
+            <p>Amity University Gwalior is committed to providing world-class education that nurtures creativity,
+                innovation, and global perspectives. Our mission is to foster academic excellence while promoting
+                holistic development and employability among students.</p>
+            <p>Our vision is to be a leading institution in the field of education and research, known for its
+                innovation and excellence in training future leaders who can contribute to society in meaningful ways.
+            </p>
+        </div>
+
+        <div class="content">
+            <h2>Academic Excellence</h2>
+            <p>Amity University Gwalior offers a wide range of undergraduate, postgraduate, and doctoral programs across
+                diverse disciplines, including engineering, management, law, pharmacy, and more. Our curriculum is
+                designed to meet global standards and equip students with the skills and knowledge required to excel in
+                their respective fields.</p>
+            <p>Our faculty members are renowned experts in their fields and are dedicated to providing students with
+                personalized attention and guidance.</p>
+        </div>
+
+        <div class="content">
+            <h2>Research and Innovation</h2>
+            <p>Research is at the core of our academic activities. We encourage our students and faculty members to
+                engage in cutting-edge research that addresses real-world problems. Our state-of-the-art research
+                facilities and collaborations with international institutions ensure that our students are exposed to
+                the latest developments in their fields.</p>
+            <p>We believe that innovation drives progress, and at Amity University Gwalior, we foster a culture of
+                innovation and entrepreneurship.</p>
+        </div>
+
+        <div class="content">
+            <h2>Global Exposure</h2>
+            <p>At Amity University Gwalior, we believe in offering our students a global perspective. We have partnered
+                with leading universities around the world to offer exchange programs, internships, and research
+                collaborations. Our students have the opportunity to study abroad, participate in international
+                conferences, and gain exposure to global industry trends.</p>
+        </div>
+
+        <div class="content">
+            <h2>Campus Life</h2>
+            <p>Our campus is equipped with modern infrastructure, including state-of-the-art classrooms, laboratories,
+                sports facilities, and recreational areas. We strive to create a nurturing and vibrant environment where
+                students can engage in extracurricular activities, social events, and community service initiatives.</p>
+        </div>
+
+        <h2>Comparison: Amity University Gwalior vs Harvard University</h2>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Criteria</th>
+                    <th>Amity University Gwalior</th>
+                    <th>Harvard University</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Academic Reputation</td>
+                    <td>Top-tier in India, recognized for innovation</td>
+                    <td>Globally renowned, consistently ranked #1</td>
+                </tr>
+                <tr>
+                    <td>Campus Facilities</td>
+                    <td>Modern labs, sports facilities, hostels</td>
+                    <td>World-class libraries, research labs, extensive campus</td>
+                </tr>
+                <tr>
+                    <td>Programs Offered</td>
+                    <td>B.Tech, MBA, BCA, Law, and more</td>
+                    <td>Undergraduate, graduate, and professional programs</td>
+                </tr>
+                <tr>
+                    <td>Global Exposure</td>
+                    <td>International exchange programs</td>
+                    <td>Extensive global partnerships and internships</td>
+                </tr>
+                <tr>
+                    <td>Research Facilities</td>
+                    <td>State-of-the-art labs and resources</td>
+                    <td>Cutting-edge research centers, access to global publications</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="content">
+            <h2>More Information</h2>
+            <p>For more information about our programs, admission process, or campus facilities, visit the following
+                pages:</p>
+            <ul>
+                <li><a href="https://www.amity.edu/gwalior/admissions">Admissions</a></li>
+                <li><a href="https://www.amity.edu/gwalior/courses">Our Courses</a></li>
+                <li><a href="https://www.amity.edu/gwalior/research">Research</a></li>
+                <li><a href="https://www.amity.edu/gwalior/campus">Campus Life</a></li>
+            </ul>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2024 Amity University Gwalior. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
